@@ -1,0 +1,19 @@
+org: viniciusamelo
+
+app: estudos-serverless
+
+service: serverless
+
+provider:
+    name: aws
+    runtime: python3.10
+    region: sa-east-1
+
+functions:
+    hello:
+        handler: handler.hello
+        events:
+            - http:
+                  path: estudos-serverless
+                  method: get
+                  cors: false
